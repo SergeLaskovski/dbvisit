@@ -67,7 +67,7 @@ function renderChart(jsonData) {
                 <div class="column">\
                     <div class="columns chart-value-area is-mobile'+columnDisabledClass+'">\
                         <div class="column-narrow chart-edit" id="edit-icon-'+index+'"><i class="material-icons hover-icon edit-icon'+editDisabledClass+'">edit</i></div>\
-                        <div class="column chart-value" id="value-'+index+'">'+decodeURI(jsonDataItem.value)+'</div>\
+                        <div class="column chart-value" id="value-'+index+'">'+jsonDataItem.value+'</div>\
                         <div class="column-narrow is-mobile chart-del" id="del-'+index+'"><i class="material-icons hover-icon del-icon">delete</i></div>\
                     </div>\
                 </div>\
@@ -120,6 +120,10 @@ function editValue(index){
 
     $("main").addClass('disabled');
     $container.empty().append(inputField);
+    //sanitize VALUE input 'on the fly'
+    $container.find("input").on("input", function(){
+        $(this).val( sanitizeString($(this).val()) );
+    })
 
 }
 
@@ -178,6 +182,10 @@ function addNew(){
     $("input[name=add-name]").on("input", function(){
         $(this).val( sanitizeNewName($(this).val()) );
     })
+    //sanitize VALUE input 'on the fly'
+    $("input[name=add-value]").on("input", function(){
+        $(this).val( sanitizeString($(this).val()) );
+    })
 
     //add event listener to SAVE button
     $("#add-new-form #add-save").off("click").on("click", function(){
@@ -216,13 +224,12 @@ function saveNew(){
 
 function sanitizeString(str){
     //Just basic sanitazation, as I don't know the demands for values
-    str = encodeURI(str);
-    return str.trim();
+    return str.replace(/[^0-9a-z-A-Z \/\-_!?\\,.:]/g, "").replace(/ +/, " ");
 }
 
 function sanitizeNewName(str){
-    str = str.replace(/[^a-z0-9 _-]/gim,"");
     str = str.replace(" ","_");
+    str = str.replace(/[^a-z0-9 _-]/gim,"");
     return str.toUpperCase().trim();
 }
 
