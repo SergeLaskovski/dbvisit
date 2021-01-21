@@ -9,6 +9,7 @@ window.onload = function() {
         getChartData();
         //add listener to add button
         $("#add-new-form").hide();
+        $("#added-success").hide();
         $("body").on("click","main .add-new", function(){ addNew() });  
     } else {
         console.log("JQuery is not loaded");
@@ -209,7 +210,7 @@ function saveNew(){
     on success do following*/
 
 
-    //close and empty
+    //close and empty add form
     $("input[name=add-name]").val('');
     $("input[name=add-value]").val('');
     $("#add-new-form").slideToggle();
@@ -217,6 +218,11 @@ function saveNew(){
     //update ur local storage
     window.jsonData.parameters.unshift({"name":name,"value":value});
 
+    //show success message
+    $("#added-success").slideToggle();
+    setTimeout(function(){
+        $("#added-success").slideToggle();
+    },3000)
     //rerender chart
     renderChart(window.jsonData);
 

@@ -48,6 +48,10 @@ button.add-new{
     height: 3em;
     width: 100%;
 }
+#added-success{
+    text-align: center;
+    color: $success;
+}
 .chart-row{
     margin: 0;
     border-bottom: 1px solid $grey-darker;
