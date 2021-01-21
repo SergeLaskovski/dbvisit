@@ -42,6 +42,8 @@ function renderChart(jsonData) {
     //populate storage
     window.jsonData.parameters = jsonData.parameters.slice();
 
+    console.log( window.jsonData.parameters );
+
 
     const $container = $("#chart-container");
     var row = '';
@@ -148,8 +150,10 @@ function saveValue(index){
 
     //save new value to our storage
     window.jsonData.parameters[index]['value'] = newVal;
-    
+
     closeValueEditor(index,newVal);
+
+    renderChart(window.jsonData);
 }
 
 function deleteRow(index){
