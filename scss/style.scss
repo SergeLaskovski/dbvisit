@@ -1,5 +1,6 @@
 //Google fonts
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 //Bulma
 @import "../node_modules/bulma/sass/utilities/_all.sass";
@@ -9,8 +10,6 @@
 @import "../node_modules/bulma/sass/elements/container.sass";
 @import "../node_modules/bulma/sass/grid/columns.sass";
 
-//Material icons
-@import "../../node_modules/material-design-icons/iconfont/material-icons.css";
 
 $darkblue: #202529;
 $darkblue-lighter: #353d44;
