@@ -1,5 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import "../node_modules/bulma/bulma.sass";
+//Google fonts
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;display=swap');
+
+//Bulma
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/helpers/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/grid/columns.sass";
+
+//Material icons
 @import "../../node_modules/material-design-icons/iconfont/material-icons.css";
 
 $darkblue: #202529;
@@ -68,7 +78,12 @@ button.add-new{
         display: flex;
         align-items: center;
     }
-
+    .chart-del{
+        padding: 0 1em;
+    }
+    .chart-edit{
+        padding-left: 1em;
+    }
     .value-disabled{
         color: $grey;
     }
@@ -76,7 +91,6 @@ button.add-new{
         visibility: visible;
         color: $grey;
         font-size: 1em;
-        padding: 0 1em;
         @include tablet {
             font-size: 1.2em;
             visibility: hidden;
