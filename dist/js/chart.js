@@ -67,7 +67,7 @@ function renderChart(jsonData) {
                 <div class="column">\
                     <div class="columns chart-value-area is-mobile'+columnDisabledClass+'">\
                         <div class="column-narrow chart-edit" id="edit-icon-'+index+'"><i class="material-icons hover-icon edit-icon'+editDisabledClass+'">edit</i></div>\
-                        <div class="column chart-value" id="value-'+index+'">'+jsonDataItem.value+'</div>\
+                        <div class="column chart-value" id="value-'+index+'">'+decodeURI(jsonDataItem.value)+'</div>\
                         <div class="column-narrow is-mobile chart-del" id="del-'+index+'"><i class="material-icons hover-icon del-icon">delete</i></div>\
                     </div>\
                 </div>\
