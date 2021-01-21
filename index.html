@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/dist/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <title>Serge Laskovski. Test task for DBVisit</title>
+</head> 
+<body>
+    
+    <main class="container">
+        <div class="columns is-vcentered has-text-right">
+            <div class="column">
+                <button class="button is-success add-new"><i class="material-icons">add</i>Add</button>
+            </div>
+        </div>
+        <div class="columns is-multiline is-vcentered" id="add-new-form">
+            <div class="column is-half">
+                <div class="has-text-centered"><input type="text" name="add-name" placeholder="Parameter name"></div>
+            </div>
+            <div class="column is-half">
+                <div class="has-text-centered"><input type="text" name="add-value" placeholder="Parameter value"></div>
+            </div>
+            <div class="column">
+                <div class="buttons is-centered">
+                    <button class="button is-success" id="add-save">Save</button>
+                    <button class="button is-info" id="add-close">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="chart-container">
+        </div>
+    </main>
+
+    <script src="/dist/js/chart.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import "../node_modules/bulma/bulma.sass";
+@import "../../node_modules/material-design-icons/iconfont/material-icons.css";
+
+$darkblue: #202529;
+$darkblue-lighter: #353d44;
+
+body {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0; 
+    padding: 0;
+} 
+main {
+    z-index: 0;
+    background-color: $darkblue;
+    color: $white;
+    border-radius: 20px;
+    margin: 1em auto !important;
+    padding: 1.2em 0 2em 0;
+}
+main.disabled{
+    pointer-events: none;
+}
+button.add-new{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 5em;
+    transition: all 0.2s ease-in-out;
+    &:hover{
+        width: 10em;
+    }
+}
+#add-new-form.columns{
+    padding: 2em;
+}
+#add-new-form input{
+    height: 3em;
+    width: 100%;
+}
+.chart-row{
+    margin: 0;
+    border-bottom: 1px solid $grey-darker;
+    &:hover{
+        background-color: $darkblue-lighter;
+        .hover-icon:not(.is-invisible) {
+            visibility: visible;
+        }
+    }
+    .column{
+        overflow-x: auto;
+    }
+    .chart-value-area{
+        &:hover:not(.value-disabled){
+            cursor: pointer;
+            .edit-icon{
+                color: $green;
+            }
+        } 
+        .chart-value{
+            min-height: 3em;
+            z-index: 0;
+            position: relative;
+        }   
+    }
+    .chart-del, .chart-edit{
+        display: flex;
+        align-items: center;
+    }
+
+    .value-disabled{
+        color: $grey;
+    }
+    .hover-icon {
+        visibility: visible;
+        color: $grey;
+        font-size: 1em;
+        padding: 0 1em;
+        @include tablet {
+            font-size: 1.2em;
+            visibility: hidden;
+        }
+    }
+    .del-icon {
+        &:hover{
+            color: $danger;
+            cursor: pointer;
+        }
+    }
+    .value-editor{
+        input{
+            width: 100%;
+            height: 3em;
+        }
+        pointer-events: all !important;
+    }
+}
