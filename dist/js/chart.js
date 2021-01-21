@@ -96,7 +96,7 @@ function renderChart(jsonData) {
 //get JSON data from source
 function getChartData(){
 
-    $.getJSON( "/dist/data.txt", function(data) {
+    $.getJSON( "data.txt", function(data) {
         window.jsonData = data;
         renderChart(data)
     })
