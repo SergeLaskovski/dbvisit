@@ -5,7 +5,7 @@
   "scripts": {
     "css": "node-sass -r scss/style.scss dist/css/style.css --output-style compressed",
     "watch": "onchange \"scss/*.scss\" --  yarn css",
-    "start": "concurrently --kill-others \"yarn watch\" \"live-server --open=../index.html --no-css-inject\""
+    "start": "concurrently --kill-others \"yarn watch\" \"live-server --open=/dist/ --no-css-inject\""
   },
   "author": "",
   "license": "ISC",
